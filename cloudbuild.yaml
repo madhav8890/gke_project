@@ -39,4 +39,4 @@ steps:
   args:
   - '-c'
   - |
-    ls
+    kubectl get pods
