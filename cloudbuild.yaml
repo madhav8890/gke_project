@@ -2,6 +2,10 @@
 logsBucket: madhav_log_cicd  # Specify the logs bucket here
 steps:
 # Step 1: Build the Docker image
+# Step 0: Set up the Kubernetes cluster context
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['container', 'clusters', 'get-credentials', 'sumit-cluster', '--zone', 'asia-south1', '--project', 'sumit-gcp-practice']
+
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-python-app', '.']
 
