@@ -1,4 +1,5 @@
 # cloudbuild.yaml
+logsBucket: madhav_log_cicd  # Specify the logs bucket here
 steps:
 # Step 1: Build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
