@@ -27,9 +27,9 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/my-python-app']
 
 # Step 3: Create or update the deployment using kubectl
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['apply', '-f', './deployment.yaml']
-
-# # Step 4: Set the image in the deployment
 # - name: 'gcr.io/cloud-builders/kubectl'
-#   args: ['set', 'image', 'deployment/my-python-app-deployment', 'my-python-app=gcr.io/$PROJECT_ID/my-python-app:$COMMIT_SHA']
+#   args: ['apply', '-f', './deployment.yaml']
+
+# Step 4: Set the image in the deployment
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['set', 'image', 'deployment/my-python-app-deployment', 'my-python-app=gcr.io/$PROJECT_ID/my-python-app:$COMMIT_SHA']
