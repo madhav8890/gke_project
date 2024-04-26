@@ -4,8 +4,13 @@ steps:
 # Step 1: Build the Docker image
 # Step 0: Set up the Kubernetes cluster context
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['container', 'clusters', 'get-credentials', 'sumit-cluster', '--zone', 'asia-south1-c', '--project', 'sumit-gcp-practice']
-
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gcloud container clusters get-credentials sumit-cluster --zone asia-south1-c --project sumit-gcp-practice &&
+    kubectl version
+    
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-python-app', '.']
 
