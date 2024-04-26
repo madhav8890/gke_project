@@ -17,7 +17,7 @@ steps:
   - |
     gcloud container clusters get-credentials sumit-cluster --zone asia-south1-c --project sumit-gcp-practice &&
     kubectl version
-    
+
 # Step 1: Build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-python-app', '.']
@@ -28,7 +28,7 @@ steps:
 
 # Step 3: Create or update the deployment using kubectl
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['apply', '-f', 'deployment.yaml']
+  args: ['apply', '-f', './deployment.yaml']
 
 # # Step 4: Set the image in the deployment
 # - name: 'gcr.io/cloud-builders/kubectl'
