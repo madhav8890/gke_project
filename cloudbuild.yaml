@@ -40,3 +40,10 @@ steps:
   - '-c'
   - |
     kubectl get pods
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    kubectl apply -f deployment.yml
