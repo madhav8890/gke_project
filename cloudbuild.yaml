@@ -39,11 +39,4 @@ steps:
   args:
   - '-c'
   - |
-    kubectl get pods
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    kubectl apply -f deployment.yaml
+    kubectl set image deployment/my-python-app-deployment my-python-app=gcr.io/$PROJECT_ID/my-python-app:$COMMIT_SHA
