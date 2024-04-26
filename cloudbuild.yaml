@@ -8,10 +8,7 @@ steps:
   args:
   - '-c'
   - |
-    export CLOUDSDK_COMPUTE_REGION=asia-south1 &&
-    export CLOUDSDK_COMPUTE_ZONE=asia-south1-c &&
-    export CLOUDSDK_CONTAINER_CLUSTER=sumit-cluster &&
-    gcloud container clusters get-credentials $CLOUDSDK_CONTAINER_CLUSTER --zone $CLOUDSDK_COMPUTE_ZONE --project sumit-gcp-practice &&
+    gcloud container clusters get-credentials sumit-cluster --zone asia-south1-c --project sumit-gcp-practice &&
     kubectl version
 
 - name: 'gcr.io/cloud-builders/docker'
