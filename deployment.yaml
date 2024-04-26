@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-python-app
-        image: gcr.io/PROJECT_ID/my-python-app:latest
+        image: gcr.io/sumit-gcp-practice/my-python-app:latest
         ports:
         - containerPort: 8080
