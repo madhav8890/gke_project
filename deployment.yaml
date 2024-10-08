@@ -17,5 +17,3 @@ spec:
         - name: my-python-app
           # image: madhav01/myapp:v1
           image: nginx
-          ports:
-            - containerPort: 8080
