@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: my-python-app-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: my-python-app
@@ -14,7 +14,7 @@ spec:
         app: my-python-app
     spec:
       containers:
-      - name: my-python-app
-        image: gcr.io/sumit-gcp-practice/my-python-app:latest
-        ports:
-        - containerPort: 8080
+        - name: my-python-app
+          image: myapp:v1
+          ports:
+            - containerPort: 8080
