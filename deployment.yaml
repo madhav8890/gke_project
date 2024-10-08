@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: my-python-app
-          image: myapp:v1
+          image: madhav01/myapp:v1
           ports:
             - containerPort: 8080
